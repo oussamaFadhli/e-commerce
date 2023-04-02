@@ -1,10 +1,10 @@
-import {Home} from './pages/index'
-import './App.css'
+import { Home } from "./pages/index";
+import "./App.css";
 
 const App = () => {
   return (
     <>
-        <Home/>
+      <Home />
     </>
   );
 };
