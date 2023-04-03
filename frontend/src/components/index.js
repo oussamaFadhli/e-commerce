@@ -1,8 +1,6 @@
 export {default as NavBar} from './NavBar'
 export {default as Footer} from './Footer'
 export {default as Layout} from './Layout'
-export {default as InfoLine} from './InfoLine'
-export {default as CategoriesBrowser} from './CategoriesBrowser'
 export {default as Header} from './Header'
 export {default as SubCategories} from './SubCategories'
 export {default as PopularProducts} from './PopularProducts'
