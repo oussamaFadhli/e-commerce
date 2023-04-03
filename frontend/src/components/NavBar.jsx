@@ -17,7 +17,7 @@ const NavBar = () => {
             </select>
             <input
               className="border-1 border-gray-300 bg-transparent font-semibold text-sm pl-4"
-              type="text"
+              type="search"
               placeholder="I'm searching for ... "
             />
             <svg
@@ -37,9 +37,9 @@ const NavBar = () => {
             </svg>
           </div>
           {/*PHONE NUMBER */}
-          <div class="ml-auto md:w-48 hidden sm:flex flex-col place-items-end">
-            <span class="font-bold md:text-xl text-white">+216 77 123 456</span>
-            <span class="font-semibold text-sm text-gray-200">
+          <div className="ml-auto md:w-48 hidden sm:flex flex-col place-items-end">
+            <span className="font-bold md:text-xl text-white">+216 77 123 456</span>
+            <span className="font-semibold text-sm text-gray-200">
               Support 24/7
             </span>
           </div>

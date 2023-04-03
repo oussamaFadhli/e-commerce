@@ -1,13 +1,22 @@
-import {Layout} from '../components/index'
+import { Layout, Hero, SubCategories } from "../components";
 
 const Home = () => {
   return (
     <>
       <Layout>
-        <main>Home</main>
+        <main>
+          <Hero />
+          <div className="flex flex-wrap justify-around">
+          <SubCategories />
+          <SubCategories />
+          <SubCategories />
+          <SubCategories />
+          <SubCategories />
+          </div>
+        </main>
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,7 +1,7 @@
 export {default as NavBar} from './NavBar'
 export {default as Footer} from './Footer'
 export {default as Layout} from './Layout'
-export {default as Header} from './Header'
+export {default as Hero} from './Hero'
 export {default as SubCategories} from './SubCategories'
 export {default as PopularProducts} from './PopularProducts'
 export {default as Anounce} from './Anounce'
