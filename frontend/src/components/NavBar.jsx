@@ -50,7 +50,7 @@ const NavBar = () => {
               <li className="ml-2 lg:ml-4 relative inline-block">
                 <a className="" href="">
                   <svg
-                    className="h-9 lg:h-10 p-2 text-gray-500"
+                    className="h-9 lg:h-10 p-2 text-white"
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="far"
@@ -72,7 +72,7 @@ const NavBar = () => {
                     3
                   </div>
                   <svg
-                    className="h-9 lg:h-10 p-2 text-gray-500"
+                    className="h-9 lg:h-10 p-2 text-white"
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="far"
@@ -94,7 +94,7 @@ const NavBar = () => {
                     12
                   </div>
                   <svg
-                    className="h-9 lg:h-10 p-2 text-gray-500"
+                    className="h-9 lg:h-10 p-2 text-white"
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="far"

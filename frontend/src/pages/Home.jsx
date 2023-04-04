@@ -1,4 +1,11 @@
-import { Layout, Hero, SubCategories } from "../components";
+import {
+  Layout,
+  Hero,
+  SubCategories,
+  SubcategoriesLayout,
+  PopularProducts,
+  ProductCard,
+} from "../components";
 
 const Home = () => {
   return (
@@ -6,13 +13,26 @@ const Home = () => {
       <Layout>
         <main>
           <Hero />
-          <div className="flex flex-wrap justify-around">
-          <SubCategories />
-          <SubCategories />
-          <SubCategories />
-          <SubCategories />
-          <SubCategories />
-          </div>
+          <SubcategoriesLayout>
+            <SubCategories />
+            <SubCategories />
+            <SubCategories />
+            <SubCategories />
+            <SubCategories />
+          </SubcategoriesLayout>
+
+          <PopularProducts>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </PopularProducts>
         </main>
       </Layout>
     </>

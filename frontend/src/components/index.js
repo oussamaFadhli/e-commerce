@@ -10,5 +10,7 @@ export {default as CustomerFeedbacks} from './CustomerFeedbacks'
 export {default as Sponsors} from './Sponsors'
 export {default as NewsLetter} from './NewsLetter'
 export {default as CustomButton} from './CustomButton'
+export {default as SubcategoriesLayout} from './SubcategoriesLayout'
+export{default as ProductCard} from './ProductCard'
 
 
