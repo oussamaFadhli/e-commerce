@@ -3,11 +3,11 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class User(models.Model):
-    username = models.CharField(max_length=255)
+    username = models.CharField(max_length=255,unique=True)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=200)
-    first_name = models.CharField(max_length=255, blank=True)
-    last_name = models.CharField(max_length=255, blank=True)
+    first_name = models.CharField(max_length=255, blank=True,null=False)
+    last_name = models.CharField(max_length=255, blank=True,null=False)
     address = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=255, blank=True)
     state = models.CharField(max_length=255, blank=True)
@@ -53,7 +53,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    image_url = models.CharField(max_length=255)
+    image_url = models.ImageField()
     stock_quantity = models.IntegerField()
     date_added = models.DateTimeField()
     is_active = models.BooleanField(default=True)
@@ -66,7 +66,8 @@ class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     review_text = models.TextField()
-    rating = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)])
+    rating = models.IntegerField(
+        validators=[MinValueValidator(0), MaxValueValidator(5)])
     date_added = models.DateTimeField()
 
     def __str__(self):
@@ -81,6 +82,40 @@ class Coupon(models.Model):
 
     def __str__(self):
         return self.coupon_code
+
+
+class ShippingMethod(models.Model):
+    SHIPPING = [
+        ('ST', 'STANDARD'),
+        ('PR', 'PREMIUM'),
+    ]
+    shipping_method_name = models.CharField(
+        max_length=30,
+        choices=SHIPPING,
+        default='ST',
+    )
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.shipping_method_name
+
+class PaymentMethod(models.Model):
+    PAYEMENT = [
+        ('CH', 'CASH'),
+        ('MC', 'MASTERCARD'),
+        ('VS', 'VISA'),
+        ('D17', 'D17'),
+    ]
+    payment_method_name = models.CharField(
+        max_length=15,
+        choices=PAYEMENT,
+        default='CH',
+    )
+    description = models.TextField()
+
+    def __str__(self):
+        return self.payment_method_name
 
 
 class Order(models.Model):
@@ -99,30 +134,13 @@ class Order(models.Model):
         max_length=30,
         choices=STATUS,
     )
-    total_amount = models.DecimalField(max_digits=10,decimal_places=2)
+    total_amount = models.DecimalField(max_digits=10, decimal_places=2)
     shipping_method = models.ForeignKey(
-        'ShippingMethod', on_delete=models.CASCADE)
+        ShippingMethod, on_delete=models.CASCADE)
     payment_method = models.ForeignKey(
-        'PaymentMethod', on_delete=models.CASCADE)
+        PaymentMethod, on_delete=models.CASCADE)
     discount = models.ForeignKey(Coupon, on_delete=models.CASCADE)
-    subtotal = models.DecimalField(max_digits=10,decimal_places=2)
+    subtotal = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return f"{self.id},{self.user},{self.order_status},{self.subtotal}"
-
-
-class PaymentMethod(models.Model):
-    payment_method_name = models.CharField(max_length=255)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.payment_method_name
-
-
-class ShippingMethod(models.Model):
-    shipping_method_name = models.CharField(max_length=255)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-
-    def __str__(self):
-        return self.shipping_method_name
