@@ -5,6 +5,7 @@ import {
   SubcategoriesLayout,
   PopularProducts,
   ProductCard,
+  Anounce,
 } from "../components";
 
 const Home = () => {
@@ -33,6 +34,7 @@ const Home = () => {
             <ProductCard />
             <ProductCard />
           </PopularProducts>
+          <Anounce/>
         </main>
       </Layout>
     </>

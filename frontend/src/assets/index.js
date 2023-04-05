@@ -4,7 +4,9 @@ import LogoShop from "./images/LogoShop.svg";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import HeroPhoto from './images/HeroPhoto.svg'
+import HeroPhoto from "./images/HeroPhoto.svg";
+import Laptop from '../assets/images/Laptop.png'
+
 export {
   LocalShippingIcon,
   LocationOnIcon,
@@ -13,4 +15,5 @@ export {
   FavoriteBorderIcon,
   ShoppingCartIcon,
   HeroPhoto,
+  Laptop,
 };
