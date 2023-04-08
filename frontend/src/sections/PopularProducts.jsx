@@ -1,4 +1,4 @@
-import {CustomButton} from '../components'
+import {CustomButton} from '.'
 const PopularProducts = ({ children }) => {
   return (
     <>

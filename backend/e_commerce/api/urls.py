@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import UserList, UserDetail, ProductList, ProductDetail, OrderList, OrderDetail, AdList
+from .views import UserList, UserDetail, ProductList, ProductDetail, OrderList, OrderDetail, AdList,ReviewList,CategoryList,CategoryDetail
 
 
 urlpatterns = [
@@ -10,4 +10,7 @@ urlpatterns = [
     path('orders/', OrderList.as_view()),
     path('orders/<int:pk>/', OrderDetail.as_view()),
     path('ads/', AdList.as_view()),
+    path('reviews/', ReviewList.as_view()),
+    path('category/', CategoryList.as_view()),
+    path('category/<int:pk>',CategoryDetail.as_view())
 ]

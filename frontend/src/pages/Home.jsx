@@ -10,7 +10,8 @@ import {
   Features,
   CustomerFeedbacks,
   Sponsors,
-} from "../components";
+  Hamburger,
+} from "../sections";
 
 const Home = () => {
   return (

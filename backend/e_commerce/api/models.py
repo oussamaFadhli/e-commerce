@@ -143,10 +143,10 @@ class Order(models.Model):
     tax = models.ForeignKey(
         Taxes, on_delete=models.CASCADE)
     discount = models.ForeignKey(Coupon, on_delete=models.CASCADE)
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2,default=0)
+    subtotal = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def calculate_subtotal(self):
-        return ((Decimal(self.quantity) * self.product.price)+(self.tax.tax)*self.quantity)-self.discount.discount_amount
+        return ((Decimal(self.quantity) * self.product.price)+(self.tax.tax)*self.quantity)-self.discount.discount_amount+self.shipping_method.price
 
     def save(self, *args, **kwargs):
         self.product.stock_quantity -= self.quantity
@@ -157,7 +157,6 @@ class Order(models.Model):
 
     def __str__(self):
         return f"{self.id},{self.user},{self.order_status},{self.subtotal}"
-
 
 
 class Ad(models.Model):
@@ -171,7 +170,6 @@ class Ad(models.Model):
     start_date_anounce = models.DateTimeField()
     end_date_hero = models.DateTimeField()
     end_date_anounce = models.DateTimeField()
-
 
     def __str__(self):
         return f"{self.title_hero},{self.title_anounce}"
