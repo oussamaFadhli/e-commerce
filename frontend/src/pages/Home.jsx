@@ -6,6 +6,10 @@ import {
   PopularProducts,
   ProductCard,
   Anounce,
+  RecomendedProducts,
+  Features,
+  CustomerFeedbacks,
+  Sponsors,
 } from "../components";
 
 const Home = () => {
@@ -35,6 +39,10 @@ const Home = () => {
             <ProductCard />
           </PopularProducts>
           <Anounce/>
+          <RecomendedProducts/>
+          <Features/>
+          <CustomerFeedbacks/>
+          <Sponsors/>
         </main>
       </Layout>
     </>
