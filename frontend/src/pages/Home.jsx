@@ -1,17 +1,15 @@
 import {
   Layout,
   Hero,
-  SubCategories,
   SubcategoriesLayout,
   PopularProducts,
-  ProductCard,
   Anounce,
   RecomendedProducts,
   Features,
   CustomerFeedbacks,
   Sponsors,
-  Hamburger,
 } from "../sections";
+import { SubCategories, ProductCard } from "../components";
 
 const Home = () => {
   return (
@@ -39,11 +37,11 @@ const Home = () => {
             <ProductCard />
             <ProductCard />
           </PopularProducts>
-          <Anounce/>
-          <RecomendedProducts/>
-          <Features/>
-          <CustomerFeedbacks/>
-          <Sponsors/>
+          <Anounce />
+          <RecomendedProducts />
+          <Features />
+          <CustomerFeedbacks />
+          <Sponsors />
         </main>
       </Layout>
     </>

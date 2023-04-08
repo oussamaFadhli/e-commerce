@@ -14,7 +14,7 @@ const Hamburger = () => {
     <>
         <button
           type="button"
-          className="block xl:hidden text-white focus:outline-none mr-4"
+          className="block lg:hidden text-white focus:outline-none mr-4"
           onClick={() => setShowMenu(!showMenu)}
         >
           {showMenu ? "Close" : <MenuIcon />}
@@ -22,9 +22,9 @@ const Hamburger = () => {
         <div
           className={`${
             showMenu ? "block" : "hidden"
-          } xl:hidden absolute top-0 left-0 h-full`}
+          } lg:hidden absolute top-0 left-0 h-full`}
         >
-          <div className="absolute top-0 left-0 w-56 h-full bg-stone-100">
+          <div className="absolute top-0 left-0 w-56 h-full bg-stone-200">
             <div className="absolute top-0 right-0">
               <button
                 type="button"

@@ -1,5 +1,5 @@
 import { LogoShop } from "../assets";
-import Hamburger from "./Hamburger";
+import { Hamburger } from "../components";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -14,7 +14,7 @@ const NavBar = () => {
           </div>
 
           {/*SEARCH*/}
-          <div className="w-full max-w-xs xl:max-w-lg 2xl:max-w-2xl bg-gray-100 rounded-md hidden xl:flex  items-center">
+          <div className="w-full max-w-xs lg:max-w-md 2xl:max-w-2xl bg-gray-100 rounded-md hidden lg:flex  items-center">
             <select className="bg-transparent uppercase font-bold text-sm p-4 mr-4">
               <option>all categories</option>
             </select>
