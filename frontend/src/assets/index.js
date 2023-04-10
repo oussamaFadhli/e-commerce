@@ -13,6 +13,11 @@ import brand5 from './images/brand-5.svg'
 import brand6 from './images/brand-6.svg'
 import brand7 from './images/brand-7.svg'
 import brand8 from './images/brand-8.svg'
+import SliderImage1 from './images/SliderImage1.jpg'
+import SliderImage2 from './images/SliderImage2.jpg'
+import SliderImage3 from './images/SliderImage3.jpg'
+import SliderImage4 from './images/SliderImage4.jpg'
+import SliderImage5 from './images/SliderImage5.jpg'
 
 
 export {
@@ -29,5 +34,11 @@ export {
   brand4,
   brand5,
   brand6,
-  brand7,brand8
+  brand7,
+  brand8,
+  SliderImage1,
+  SliderImage2,
+  SliderImage3,
+  SliderImage4,
+  SliderImage5,
 };

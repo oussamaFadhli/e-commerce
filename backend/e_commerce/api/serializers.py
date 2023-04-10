@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Product, Order, Ad,Review,Category
+from .models import User, Product, Order, AnounceAd,Review,Category,HeroAd
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -22,9 +22,9 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class AdSerializer(serializers.ModelSerializer):
+class AnounceAdSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Ad
+        model = AnounceAd
         fields = '__all__'
 
 class ReviewSerlizer(serializers.ModelSerializer):
@@ -38,3 +38,10 @@ class CategorySerilaizer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = '__all__'
+
+class HeroAdSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = HeroAd
+        fields = '__all__'
+

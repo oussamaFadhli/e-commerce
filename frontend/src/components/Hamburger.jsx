@@ -28,7 +28,7 @@ const Hamburger = () => {
             <div className="absolute top-0 right-0">
               <button
                 type="button"
-                className="block text-black font-bold py-2 px-4 hover:bg-gray-800 focus:outline-none"
+                className="block text-black font-bold py-2 px-4 hover:bg-[#003F62] focus:outline-none"
                 onClick={closeMenu}
               >
                 <CloseIcon />
@@ -40,7 +40,7 @@ const Hamburger = () => {
                   <li>
                     <a
                       href="#"
-                      className="block px-4 py-2 text-black font-bold hover:bg-gray-800"
+                      className="block px-4 py-2 text-black font-bold hover:bg-[#003F62]"
                       onClick={closeMenu}
                     >
                       Home
@@ -49,7 +49,7 @@ const Hamburger = () => {
                   <li>
                     <a
                       href="#"
-                      className="block px-4 py-2 text-black font-bold hover:bg-gray-800"
+                      className="block px-4 py-2 text-black font-bold hover:bg-[#003F62]"
                       onClick={closeMenu}
                     >
                       About
@@ -58,7 +58,7 @@ const Hamburger = () => {
                   <li>
                     <a
                       href="#"
-                      className="block px-4 py-2 text-black font-bold hover:bg-gray-800"
+                      className="block px-4 py-2 text-black font-bold hover:bg-[#003F62]"
                       onClick={closeMenu}
                     >
                       Contact

@@ -159,17 +159,25 @@ class Order(models.Model):
         return f"{self.id},{self.user},{self.order_status},{self.subtotal}"
 
 
-class Ad(models.Model):
-    title_hero = models.CharField(max_length=200)
-    title_anounce = models.CharField(max_length=200)
-    image_hero = models.ImageField(upload_to='ads/')
-    image_anounce = models.ImageField(upload_to='ads/')
-    url_hero = models.URLField(max_length=200)
-    url_anounce = models.URLField(max_length=200)
-    start_date_hero = models.DateTimeField()
-    start_date_anounce = models.DateTimeField()
-    end_date_hero = models.DateTimeField()
-    end_date_anounce = models.DateTimeField()
+class AnounceAd(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField(max_length=255)
+    image = models.ImageField(upload_to='anounce_ads/')
+    url = models.URLField(max_length=200)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
 
     def __str__(self):
-        return f"{self.title_hero},{self.title_anounce}"
+        return f"{self.title}"
+
+class HeroAd(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='hero_ad/')
+    url = models.URLField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.title
+

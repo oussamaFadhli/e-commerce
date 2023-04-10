@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import User, Product, Order, Ad,Review,Category
-from .serializers import UserSerializer, ProductSerializer, OrderSerializer, AdSerializer,ReviewSerlizer,CategorySerilaizer
+from .models import User, Product, Order, AnounceAd, Review, Category, HeroAd
+from .serializers import UserSerializer, ProductSerializer, OrderSerializer, AnounceAdSerializer, ReviewSerlizer, CategorySerilaizer, HeroAdSerializer
 
 
 class UserList(generics.ListCreateAPIView):
@@ -33,17 +33,26 @@ class OrderDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = OrderSerializer
 
 
-class AdList(generics.ListAPIView):
-    queryset = Ad.objects.all()
-    serializer_class = AdSerializer
+class AnounceAdList(generics.ListAPIView):
+    queryset = AnounceAd.objects.order_by('-id')[:1]
+    serializer_class = AnounceAdSerializer
+
+class HeroAdList(generics.ListAPIView):
+    queryset = HeroAd.objects.order_by('-id')[:5]
+    serializer_class = HeroAdSerializer
 
 class ReviewList(generics.ListCreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerlizer
 
+
 class CategoryList(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerilaizer
+
+
 class CategoryDetail(generics.RetrieveAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerilaizer
+
+

@@ -1,12 +1,12 @@
 import {
   Layout,
-  Hero,
   SubcategoriesLayout,
   PopularProducts,
   Anounce,
   RecomendedProducts,
   Features,
   CustomerFeedbacks,
+  Hero,
   Sponsors,
 } from "../sections";
 import { SubCategories, ProductCard } from "../components";

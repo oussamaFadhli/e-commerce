@@ -1,8 +1,4 @@
-import {
-  NavBar,
-  NewsLetter,
-  Footer,
-} from "./index";
+import { NavBar, Hero, NewsLetter, Footer } from "./index";
 const Layout = ({ children }) => {
   return (
     <>
