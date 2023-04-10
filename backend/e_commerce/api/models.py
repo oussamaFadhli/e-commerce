@@ -1,10 +1,9 @@
 from django.db import models
 from decimal import Decimal
-from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
-class User(models.Model):
+class CustomUser(models.Model):
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=200)
@@ -24,7 +23,7 @@ class User(models.Model):
 
 
 class CustomerServices(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     report_date = models.DateField(auto_now=True)
     report_subject = models.CharField(max_length=50)
     message = models.TextField()
@@ -57,7 +56,7 @@ class Product(models.Model):
 
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     review_text = models.TextField()
     rating = models.IntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(5)])
@@ -120,7 +119,7 @@ class PaymentMethod(models.Model):
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     order_date = models.DateTimeField()
     quantity = models.IntegerField(

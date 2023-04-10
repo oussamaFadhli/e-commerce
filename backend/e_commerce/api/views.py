@@ -1,16 +1,25 @@
 from rest_framework import generics
-from .models import User, Product, Order, AnounceAd, Review, Category, HeroAd
-from .serializers import UserSerializer, ProductSerializer, OrderSerializer, AnounceAdSerializer, ReviewSerlizer, CategorySerilaizer, HeroAdSerializer
+from rest_framework.permissions import AllowAny
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import  Product, Order, AnounceAd, Review, Category, HeroAd
+from .serializers import  CustomUserSerializer,ProductSerializer, OrderSerializer, AnounceAdSerializer, ReviewSerlizer, CategorySerilaizer, HeroAdSerializer
 
 
-class UserList(generics.ListCreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
+class RegisterView(APIView):
+    serializer_class = CustomUserSerializer
+    permission_classes = [AllowAny]
+    authentication_classes = [JSONWebTokenAuthentication]
 
-class UserDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+
 
 
 class ProductList(generics.ListCreateAPIView):
@@ -37,9 +46,11 @@ class AnounceAdList(generics.ListAPIView):
     queryset = AnounceAd.objects.order_by('-id')[:1]
     serializer_class = AnounceAdSerializer
 
+
 class HeroAdList(generics.ListAPIView):
     queryset = HeroAd.objects.order_by('-id')[:5]
     serializer_class = HeroAdSerializer
+
 
 class ReviewList(generics.ListCreateAPIView):
     queryset = Review.objects.all()
@@ -54,5 +65,3 @@ class CategoryList(generics.ListAPIView):
 class CategoryDetail(generics.RetrieveAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerilaizer
-
-
