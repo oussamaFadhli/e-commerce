@@ -16,7 +16,11 @@ const NavBar = () => {
           {/*SEARCH*/}
           <div className="w-full max-w-xs lg:max-w-md 2xl:max-w-2xl bg-gray-100 rounded-md hidden lg:flex  items-center">
             <select className="bg-transparent uppercase font-bold text-sm p-4 mr-4">
-              <option>all categories</option>
+              <option>All categories</option>
+              <option>pc gamer</option>
+              <option>LAPTOPS</option>
+              <option>ACCESSORIES</option>
+              <option>MONITORS</option>
             </select>
             <input
               className="border-1 border-gray-300 bg-transparent font-semibold text-sm pl-4"

@@ -1,27 +1,17 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from decimal import Decimal
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
-class CustomUser(models.Model):
-    username = models.CharField(max_length=255, unique=True)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=200)
-    first_name = models.CharField(max_length=255, blank=True, null=False)
-    last_name = models.CharField(max_length=255, blank=True, null=False)
-    address = models.CharField(max_length=255, blank=True)
-    country = models.CharField(max_length=255, blank=True)
-    city = models.CharField(max_length=255, blank=True)
-    state = models.CharField(max_length=255, blank=True)
-    zip_code = models.CharField(max_length=255, blank=True)
-    phone_number = models.CharField(max_length=255, blank=True)
-    is_active = models.BooleanField(default=True)
-    creation_date = models.DateTimeField(auto_now=True)
+class CustomUser(AbstractUser):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255, unique=True)
+    password = models.CharField(max_length=255)
+    username = None
 
-    def __str__(self):
-        return f"{self.username}"
-
-
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 class CustomerServices(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     report_date = models.DateField(auto_now=True)
