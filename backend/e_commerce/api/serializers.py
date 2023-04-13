@@ -7,7 +7,7 @@ from .models import CustomUser,Product, Order, AnounceAd, Review, Category, Hero
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['id', 'name', 'email', 'password']
+        fields = '__all__'
         extra_kwargs = {
             'password': {'write_only': True}
         }

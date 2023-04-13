@@ -1,4 +1,5 @@
-from rest_framework import generics,permissions
+from rest_framework import generics,permissions,status
+from rest_framework.decorators import api_view
 from .models import  CustomUser,Product, Order, AnounceAd, Review, Category, HeroAd
 from .serializers import  UserSerializer,ProductSerializer, OrderSerializer, AnounceAdSerializer, ReviewSerlizer, CategorySerilaizer, HeroAdSerializer
 from rest_framework.views import APIView
@@ -8,14 +9,15 @@ import jwt, datetime
 
 
 # Create your views here.
+
 class RegisterView(APIView):
     permission_classes = (permissions.AllowAny,)
     def post(self, request):
         serializer = UserSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data)
-
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginView(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -67,7 +69,7 @@ class UserView(APIView):
 
 
 class LogoutView(APIView):
-    
+
     def post(self, request):
         response = Response()
         response.delete_cookie('jwt')
