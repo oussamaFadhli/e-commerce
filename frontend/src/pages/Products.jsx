@@ -1,9 +1,15 @@
-import React from 'react'
+import { Layout, ProductsFiltersLayout } from "../sections";
 
-const Product = () => {
+const Products = () => {
   return (
-    <div>Products</div>
-  )
-}
+    <>
+      <Layout>
+        <ProductsFiltersLayout>
+          Test
+        </ProductsFiltersLayout>
+      </Layout>
+    </>
+  );
+};
 
-export default Product
+export default Products;

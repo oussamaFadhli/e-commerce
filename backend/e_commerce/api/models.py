@@ -57,7 +57,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 class CustomerServices(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,related_name='CustomerServices')
     report_date = models.DateField(auto_now=True)
     report_subject = models.CharField(max_length=50)
     message = models.TextField()
@@ -90,7 +90,7 @@ class Product(models.Model):
 
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,related_name='Review')
     review_text = models.TextField()
     rating = models.IntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(5)])
@@ -153,7 +153,7 @@ class PaymentMethod(models.Model):
 
 
 class Order(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,related_name='Order')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     order_date = models.DateTimeField()
     quantity = models.IntegerField(
