@@ -11,11 +11,11 @@ import {
 } from "@heroicons/react/20/solid";
 
 const sortOptions = [
-  { name: "Most Popular", to: "#", current: true },
-  { name: "Best Rating", to: "#", current: false },
-  { name: "Newest", to: "#", current: false },
-  { name: "Price: Low to High", to: "#", current: false },
-  { name: "Price: High to Low", to: "#", current: false },
+  { name: "Most Popular", to: "/products/most-popular", current: true },
+  { name: "Best Rating", to: "/products/best-rating", current: false },
+  { name: "Newest", to: "/products/newest", current: false },
+  { name: "Price: Low to High", to: "/products/asc", current: false },
+  { name: "Price: High to Low", to: "/products/desc", current: false },
 ];
 const subCategories = [
   { name: "All categories", to: "/products" },

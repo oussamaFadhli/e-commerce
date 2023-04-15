@@ -1,12 +1,27 @@
-import { Layout, ProductsFiltersLayout } from "../sections";
+import { Layout, ProductsFiltersLayout,Anounce } from "../sections";
+import { ProductCard } from "../components";
 
 const Products = () => {
   return (
     <>
       <Layout>
         <ProductsFiltersLayout>
-          Test
+        <section className="flex flex-wrap gap-20">
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
+        </section>
         </ProductsFiltersLayout>
+        <Anounce/>
       </Layout>
     </>
   );

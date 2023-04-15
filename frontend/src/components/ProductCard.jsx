@@ -4,6 +4,7 @@ import { HeroPhoto } from "../assets";
 const ProductCard = () => {
   return (
     <>
+    <div className=" z-1">
       <Link href="#" className="group relative block overflow-hidden">
         <button
           className="absolute right-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75 "
@@ -45,6 +46,7 @@ const ProductCard = () => {
           </form>
         </div>
       </Link>
+    </div>
     </>
   );
 };
