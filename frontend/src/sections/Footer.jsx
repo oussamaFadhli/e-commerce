@@ -95,7 +95,7 @@ const Footer = () => {
                         className="text-gray-700 transition hover:text-gray-700/75"
                         href="/"
                       >
-                        Smartphones
+                        Gaming
                       </a>
                     </li>
 

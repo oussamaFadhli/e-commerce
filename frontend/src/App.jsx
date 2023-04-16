@@ -1,4 +1,4 @@
-import { Home , Products } from "./pages";
+import { Home , Products,ProductDetails } from "./pages";
 import {Routes , Route } from 'react-router-dom'
 import "./App.css";
 
@@ -8,6 +8,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/products' element={<Products/>} />
+      <Route path='/products/id' element={<ProductDetails/>} />
     </Routes>
     </>
   );
