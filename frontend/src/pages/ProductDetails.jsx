@@ -1,4 +1,4 @@
-import { Layout } from "../sections";
+import { Layout} from "../sections";
 import { macbook } from "../assets";
 import { Review } from "../components";
 import CheckIcon from "@mui/icons-material/Check";
@@ -64,7 +64,7 @@ const ProductDetails = () => {
                     type="button"
                     className="w-full rounded border border-gray-300 bg-gray-100 px-6 py-3 text-sm font-bold uppercase tracking-wide"
                   >
-                    Notify when on sale
+                    Add to favorites
                   </button>
                 </form>
               </div>
