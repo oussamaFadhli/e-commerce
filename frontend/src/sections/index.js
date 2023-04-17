@@ -10,8 +10,9 @@ export {default as Sponsors} from './Sponsors'
 export {default as NewsLetter} from './NewsLetter'
 export {default as CustomButton} from './CustomButton'
 export {default as SubcategoriesLayout} from './SubcategoriesLayout'
-export{default as RecomendedProducts} from './RecomendedProducts'
-export{default as ProductsFiltersLayout} from './ProductsFiltersLayout'
+export {default as RecomendedProducts} from './RecomendedProducts'
+export {default as ProductsFiltersLayout} from './ProductsFiltersLayout'
 export {default as Carts} from './Carts'
+export {default as CheckoutForm} from './CheckoutForm'
 
 

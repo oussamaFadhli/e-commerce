@@ -19,7 +19,7 @@ const sortOptions = [
 ];
 const subCategories = [
   { name: "All categories", to: "/products" },
-  { name: "PCS Gamers", to: "/pc/gamers" },
+  { name: "PCS Gamers", to: "/pc/gamer" },
   { name: "PCS Office", to: "/pc/office" },
   { name: "Laptops", to: "/pc/laptops" },
   { name: "Gaming Packs", to: "/packs" },

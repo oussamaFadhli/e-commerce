@@ -8,19 +8,21 @@ const NavBar = () => {
       {/*LOGO*/}
       <header className="bg-[#003F62]">
         <div className="container mx-auto px-4 py-8 flex items-center">
-          <Hamburger/>
-          <div className="mr-auto md:w-48 flex-shrink-0">
+          <Hamburger />
+          <Link to="/" className="mr-auto md:w-48 flex-shrink-0">
             <img className="h-8 md:h-10" src={LogoShop} alt="" />
-          </div>
+          </Link>
 
           {/*SEARCH*/}
           <div className="w-full max-w-xs lg:max-w-md 2xl:max-w-2xl bg-gray-100 rounded-md hidden lg:flex  items-center">
             <select className="bg-transparent uppercase font-bold text-sm p-4 mr-4">
-              <option>All categories</option>
-              <option>pc gamer</option>
+              <option>ALL CATEGORIES</option>
+              <option>PC GAMER</option>
+              <option>PC OFFICE</option>
               <option>LAPTOPS</option>
               <option>ACCESSORIES</option>
               <option>MONITORS</option>
+              <option>STOCKAGE</option>
             </select>
             <input
               className="border-1 border-gray-300 bg-transparent font-semibold text-sm pl-4"
@@ -98,7 +100,7 @@ const NavBar = () => {
                 </Link>
               </li>
               <li className="ml-2 lg:ml-4 relative inline-block">
-                <Link className="" to="">
+                <Link className="" to="/carts">
                   <div className="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm">
                     12
                   </div>

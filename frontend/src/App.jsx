@@ -1,4 +1,4 @@
-import { Home , Products,ProductDetails,CartsPage } from "./pages";
+import { Home , Products,ProductDetails,CartsPage, Checkout } from "./pages";
 import {Routes , Route } from 'react-router-dom'
 import "./App.css";
 
@@ -10,6 +10,7 @@ const App = () => {
       <Route path='/products' element={<Products/>} />
       <Route path='/products/id' element={<ProductDetails/>} />
       <Route path='/carts' element={<CartsPage/>} />
+      <Route path='/checkout' element={<Checkout/>} />
     </Routes>
     </>
   );
