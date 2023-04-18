@@ -19,9 +19,11 @@ import SliderImage3 from './images/SliderImage3.jpg'
 import SliderImage4 from './images/SliderImage4.jpg'
 import SliderImage5 from './images/SliderImage5.jpg'
 import macbook from './images/macbook.jpg'
+import Registerimg from './images/registerimg.gif'
 
 
 export {
+  Registerimg,
   macbook,
   LocationOnIcon,
   LogoShop,
