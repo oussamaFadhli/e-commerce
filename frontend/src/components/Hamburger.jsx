@@ -1,6 +1,6 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import React from "react";
+import { Link } from "@mui/material";
 import { useState } from "react";
 
 const Hamburger = () => {
@@ -38,31 +38,31 @@ const Hamburger = () => {
               <nav className="mb-4">
                 <ul>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/register"
+                      className="block no-underline px-4 py-2 text-black font-bold hover:bg-[#003F62]"
+                      onClick={closeMenu}
+                    >
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/products"
                       className="block px-4 py-2 text-black font-bold hover:bg-[#003F62]"
                       onClick={closeMenu}
                     >
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/"
                       className="block px-4 py-2 text-black font-bold hover:bg-[#003F62]"
                       onClick={closeMenu}
                     >
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-black font-bold hover:bg-[#003F62]"
-                      onClick={closeMenu}
-                    >
-                      Contact
-                    </a>
+                      Products
+                    </Link>
                   </li>
                 </ul>
               </nav>
